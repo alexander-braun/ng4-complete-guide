@@ -8,6 +8,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Output() navigationChange: EventEmitter<any> = new EventEmitter();
 
+  dropdownVisible = false;
+
+  toggleVisible(): void {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
+
   constructor() {}
 
   ngOnInit(): void {}

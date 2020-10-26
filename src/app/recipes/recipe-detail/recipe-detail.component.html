@@ -16,11 +16,15 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="btn-group">
-      <div class="nav-item dropdown">
+      <div class="nav-item dropdown" (click)="toggleVisible()">
         <button type="button" class="btn btn-primary dropdown-toggle">
           Manage Recipe
         </button>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          [ngClass]="{ show: dropdownVisible }"
+        >
           <li class="dropdown-item"><a href="#">To Shopping Lis</a></li>
           <li class="dropdown-item"><a href="#">Edit Recipe</a></li>
           <li class="dropdown-item"><a href="#">Delete Recipe</a></li>

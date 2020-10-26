@@ -31,10 +31,15 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          (click)="toggleVisible()"
         >
           Manage
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          [ngClass]="{ show: dropdownVisible }"
+        >
           <a class="dropdown-item" href="#">Save Data</a>
           <a class="dropdown-item" href="#">Fetch Data</a>
         </div>

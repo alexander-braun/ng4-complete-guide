@@ -9,6 +9,12 @@ import { Recipe } from '../recipe.model';
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
 
+  dropdownVisible = false;
+
+  toggleVisible(): void {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
