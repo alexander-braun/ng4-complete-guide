@@ -6,34 +6,11 @@
 <hr />
 <div class="row">
   <div class="col-md-12">
-    <ul class="list-group">
-      <li class="list-group-item list-group-item-action">
-        <a
-          href="#"
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-decoration: none;
-            color: black;
-          "
-          *ngFor="let recipe of recipes"
-        >
-          <div>
-            <h4 class="mb-1">{{ recipe.name }}</h4>
-            <p class="mb-1">{{ recipe.description }}</p>
-          </div>
-          <span>
-            <img
-              src="{{ recipe.imagePath }}"
-              alt="{{ recipe.name }}"
-              class="img-responsive"
-              style="max-height: 50px"
-            />
-          </span>
-        </a>
-      </li>
-    </ul>
-    <app-recipe-item></app-recipe-item>
+    <app-recipe-item
+      *ngFor="let recipe of recipes"
+      [recipe]="recipe"
+      (recipeSelected)="onRecipeSelected(recipe)"
+    >
+    </app-recipe-item>
   </div>
 </div>
