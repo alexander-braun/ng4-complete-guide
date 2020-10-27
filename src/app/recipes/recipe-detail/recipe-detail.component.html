@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-md-12">
     <img
       style="max-height: 300px"
       [src]="recipe.imagePath"
@@ -9,15 +9,19 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-md-12">
     <h1>{{ recipe.name }}</h1>
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-md-12">
     <div class="btn-group">
-      <div class="nav-item dropdown" (click)="toggleVisible()">
-        <button type="button" class="btn btn-primary dropdown-toggle">
+      <div class="nav-item dropdown">
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle"
+          (click)="toggleVisible()"
+        >
           Manage Recipe
         </button>
         <ul
@@ -25,7 +29,11 @@
           aria-labelledby="navbarDropdown"
           [ngClass]="{ show: dropdownVisible }"
         >
-          <li class="dropdown-item"><a href="#">To Shopping Lis</a></li>
+          <li class="dropdown-item">
+            <a style="cursor: pointer" (click)="onAddToShoppingList()"
+              >To Shopping List</a
+            >
+          </li>
           <li class="dropdown-item"><a href="#">Edit Recipe</a></li>
           <li class="dropdown-item"><a href="#">Delete Recipe</a></li>
         </ul>
@@ -34,8 +42,14 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">{{ recipe.description }}</div>
+  <div class="col-md-12">{{ recipe.description }}</div>
 </div>
 <div class="row">
-  <div class="col-xs-12">Ingredients</div>
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -15,7 +16,11 @@ export class RecipeDetailComponent implements OnInit {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
-  constructor() {}
+  constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit(): void {}
+
+  onAddToShoppingList(): void {
+    this.shoppingListService.addIngredients(this.recipe.ingredients);
+  }
 }

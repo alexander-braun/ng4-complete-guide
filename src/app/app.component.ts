@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   navigationTarget = 'recipe';
+
   onNavigationChange(event: string): void {
     this.navigationTarget = event;
   }
