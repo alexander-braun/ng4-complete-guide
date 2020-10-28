@@ -1,15 +1,15 @@
 <ul class="list-group">
-  <li class="list-group-item list-group-item-action">
+  <li class="list-group-item list-group-item-action" routerLinkActive="active">
     <a
-      href="#"
       style="
+        cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
         text-decoration: none;
         color: black;
       "
-      (click)="onSelected()"
+      [routerLink]="[index]"
     >
       <div>
         <h4 class="mb-1">{{ recipe.name }}</h4>
